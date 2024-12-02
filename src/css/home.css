@@ -1,0 +1,49 @@
+/* Mobile First Styles */
+
+/* General Reset */
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .mobile-menu-icon {
+        display: none;
+    }
+
+    .navbar {
+        display: flex;
+        gap: 15px;
+        position: static;
+        flex-direction: row;
+        background: none;
+        box-shadow: none;
+    }
+
+
+    
+}
+
+@media (max-width: 768px) {
+
+    .banner-layout {
+        flex-direction: column;
+    }
+    .about-layout {
+        flex-direction: column;
+    }
+    .tournament-images, .puzzle-images {
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        grid-area: 40px;
+    }
+    .banner-content .title {
+        font-size: 2rem;
+    }
+    .banner-content .tagline {
+        font-size: 1rem;
+    }
+    .btn {
+        font-size: 1rem;
+    }
+
+}

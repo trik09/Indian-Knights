@@ -2,6 +2,9 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../css/style.css";
+import "../css/about.css";
+import Join from "../components/Join";
+
 
 const About = () => {
   return (
@@ -59,30 +62,8 @@ const About = () => {
 
 
       {/* Join Us Section */}
-      <section className="join-us">
-        <h2>Join Us</h2>
-        <p>
-          Be part of the Indian Knights community and connect with fellow chess enthusiasts through our platforms:
-        </p>
-        <ul>
-          <li>
-            <a href="#" target="_blank" rel="noopener noreferrer">WhatsApp Community</a>
-          </li>
-          <li>
-            <a href="#" target="_blank" rel="noopener noreferrer">Telegram Group</a>
-          </li>
-          <li>
-            <a href="#" target="_blank" rel="noopener noreferrer">WhatsApp Channel</a>
-          </li>
-          <li>
-            <a href="#" target="_blank" rel="noopener noreferrer">Instagram Page</a>
-          </li>
-        </ul>
-        <p>
-          We also welcome international players to join our global community for chess lovers, 
-          and don't forget to check out our Lichess team, "Indian Knights," to play and learn online.
-        </p>
-      </section>
+    <Join/>
+
 
       {/* Footer Component */}
       <Footer />

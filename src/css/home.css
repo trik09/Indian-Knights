@@ -3,23 +3,7 @@
 /* General Reset */
 
 /* Media Queries */
-@media (min-width: 768px) {
-    .mobile-menu-icon {
-        display: none;
-    }
 
-    .navbar {
-        display: flex;
-        gap: 15px;
-        position: static;
-        flex-direction: row;
-        background: none;
-        box-shadow: none;
-    }
-
-
-    
-}
 
 @media (max-width: 768px) {
 
@@ -47,3 +31,5 @@
     }
 
 }
+
+  

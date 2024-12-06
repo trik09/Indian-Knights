@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../css/style.css";
 import "../css/home.css";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Join from "../components/Join";
 
 const Home = () => {
+
+  // Create a ref for the Join Us section
+  const joinRef = useRef(null);
+
+  // Function to handle scrolling
+  const handleScrollToJoin = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight, // Scroll to the end of the page
+      behavior: "smooth", // Smooth scrolling animation
+    });
+  };
+
   return (
     <div className="home">
       <Header />
@@ -16,9 +29,9 @@ const Home = () => {
           <div className="banner-content">
             <h1 className="title">Indian Knights</h1>
             <p className="tagline">Chess Community</p>
-            <a href="#" className="btn">
-              View More
-            </a>
+            <button style={{border :"none"}} className="btn" onClick={handleScrollToJoin}>
+              Join now
+            </button>
           </div>
           <div className="banner-image">
             <img
@@ -46,42 +59,48 @@ const Home = () => {
                 foster learning, growth, and sportsmanship through the art of chess.
                 Join us in exploring the universe of chess strategies and challenges.
             </p>
+            <a href="/about" className="btn">
+              View More
+            </a>
         </div>
     </div>
 </section>
 
-      {/* Tournaments Section */}
-      <section className="tournaments">
-        <h2>Tournaments</h2>
-        <div className="tournament-images">
-          <div className="image-box">
-            <img src="/img/tournaments/tmt1.jpg" alt="Tournament 1" />
-           
-          </div>
-          <div className="image-box">
-            <img src="/img/tournaments/tmt2.jpg" alt="Tournament 2" />
-          </div>
-        
-        </div>
-      </section>
+<section className="tournaments">
+  <h2>Tournaments</h2>
+  <div className="tournament-container">
+    <div className="tournament-images">
+      <div className="image-box">
+        <img src="/img/tournaments/tmt1.jpg" alt="Tournament 1" />
+      </div>
+      <div className="image-box">
+        <img src="/img/tournaments/tmt2.jpg" alt="Tournament 2" />
+      </div>
+    </div>
+    <a href="/tournaments" className="btn">View More</a>
+  </div>
+</section>
 
-      {/* Puzzles Section */}
-      <section className="puzzles">
-        <h2>Puzzles</h2>
-        <div className="puzzle-images">
-          <div className="image-box">
-            <img src="/img/puzzle/p1.jpg" alt="Puzzle 1" />
-          </div>
-          <div className="image-box">
-          <img src="/img/puzzle/p2.jpg" alt="Puzzle 1" />
+{/* Puzzles Section */}
+<section className="puzzles">
+  <h2>Puzzles</h2>
+  <div className="puzzle-container">
+    <div className="puzzle-images">
+      <div className="image-box">
+        <img src="/img/puzzle/pe1.jpg" alt="Puzzle 1" />
+      </div>
+      <div className="image-box">
+        <img src="/img/puzzle/pm2.jpg" alt="Puzzle 2" />
+      </div>
+      <div className="image-box">
+        <img src="/img/puzzle/ph1.jpg" alt="Puzzle 3" />
+      </div>
+    </div>
+    <a href="/puzzles" className="btn">View More</a>
+  </div>
+</section>
 
-          </div>
-          <div className="image-box">
-          <img src="/img/puzzle/p3.jpg" alt="Puzzle 1" />
-
-          </div>
-        </div>
-      </section>
+      <Join/>
 
       <Footer />
     </div>

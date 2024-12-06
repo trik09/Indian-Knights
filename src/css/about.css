@@ -1,0 +1,127 @@
+/* Advanced Styling for the Join Us Section */
+.join-us {
+    background: linear-gradient(135deg, #fff4e6, #ffdab3);
+    color: #4a4a4a;
+    padding: 30px 20px;
+
+
+}
+
+
+
+.join-us h3 {
+    color: #ff6767;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.join-us p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #555;
+}
+
+.join-us ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.join-us ul li {
+    flex: 1 1 30%;
+    max-width: 220px;
+    text-align: center;
+    background: #ffffff;
+    padding: 15px;
+    border: 1px solid #ff6700;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+}
+
+.join-us ul li::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(255, 103, 0, 0.2), rgba(255, 206, 153, 0.2));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.join-us ul li:hover::after {
+    opacity: 1;
+}
+
+.join-us ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.join-us a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: color 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.join-us a:hover {
+    color: #ff6700;
+}
+
+.join-us .platform-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.join-us li:hover .platform-icon {
+    transform: scale(1.1);
+}
+
+.domestic-links, .international-links {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .join-us ul li {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    .join-us h2, .join-us h3 {
+        font-size: 1.3rem;
+    }
+
+    .join-us p {
+        font-size: 0.95rem;
+    }
+
+    .join-us ul li {
+        flex: 1 1 90%;
+    }
+
+    .join-us ul li {
+        max-width: none;
+    }
+}

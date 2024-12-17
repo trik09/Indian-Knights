@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "../css/style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChessKnight } from "@fortawesome/free-solid-svg-icons";
+import { faChessKnight, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import "../css/style.css";
 
-const Header = () => {
+const Header = ({ onToggleDarkMode, isDarkMode }) => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -12,24 +12,24 @@ const Header = () => {
 
   return (
     <header className="header">
+      {/* Logo Section */}
       <div className="logo">
-        <img
-          src="/img/IK-logo.jpeg"
-          alt="Indian Knights Logo"
-          className="nav-logo"
-        />
+        <img src="/img/IK-logo.jpeg" alt="Indian Knights Logo" className="nav-logo" />
         <span className="logo-text">Indian Knights</span>
       </div>
 
-      {/* Nav Button for Mobile View */}
+      {/* Mobile Menu Toggle Button */}
       <button className="nav-toggle" onClick={toggleMobileMenu}>
         <FontAwesomeIcon icon={faChessKnight} />
       </button>
 
+      {/* Dark Mode Toggle Button */}
+      <button className="dark-mode-toggle" onClick={onToggleDarkMode}>
+        <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
+      </button>
+
       {/* Navigation Menu */}
-      <nav
-        className={`navbar ${isMobileMenuOpen ? "mobile show" : "mobile hide"}`}
-      >
+      <nav className={`navbar ${isMobileMenuOpen ? "mobile show" : "mobile hide"}`}>
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/tournaments">Tournaments</a>
@@ -44,7 +44,7 @@ const Header = () => {
         </a>
       </nav>
 
-      {/* Inline CSS for Styling */}
+      {/* Inline Styles */}
       <style>{`
         .header {
           display: flex;
@@ -52,13 +52,16 @@ const Header = () => {
           align-items: center;
           padding: 10px 20px;
           color: white;
-          position: fixed; /* Fixed at the top */
+          position: fixed;
           top: 0;
           width: 100%;
-          z-index: 1000; /* Ensures it stays above other elements */
-          background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent background for clarity */
+          z-index: 1000;
+          background-color: #ffffff;
           box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         }
+                    .dark-mode .header {
+   background-color: #000000;
+}
 
         .logo {
           display: flex;
@@ -91,6 +94,22 @@ const Header = () => {
           transform: scale(1.1);
         }
 
+        .dark-mode-toggle {
+          color: #000000;
+          background: transparent;
+          border: none;
+          font-size: 20px;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+        }
+          .dark-mode  .dark-mode-toggle {
+          color: white;
+      }
+
+        .dark-mode-toggle:hover {
+          transform: scale(1.1);
+        }
+
         .nav-toggle {
           display: none;
           color: #ff5757;
@@ -109,12 +128,16 @@ const Header = () => {
         }
 
         .navbar a {
-          color: white;
+          color: #000000;
           text-decoration: none;
           font-size: 1rem;
           padding: 10px 0;
           transition: background-color 0.2s ease, transform 0.2s ease;
         }
+
+         .dark-mode .navbar a {
+          color: #ffffff;
+          }
 
         .navbar a:hover {
           background-color: rgba(255, 255, 255, 0.2);
@@ -159,6 +182,12 @@ const Header = () => {
           .navbar a {
             margin: 0px 0;
           }
+
+          .dark-mode .navbar {
+            background-color: #000000;
+          }
+  
+
         }
       `}</style>
     </header>

@@ -18,7 +18,8 @@
 }
   /* Puzzle of the Day Section */
   .pzl-page .puzzle-day {
-    background: linear-gradient(120deg, #ff8c00, #ffd700);
+    background: url('../../public/img/sky.jpg') no-repeat center center fixed;
+   background-size: cover;
   
     text-align: center;
     padding: 30px 20px;
@@ -71,7 +72,8 @@
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 250px;
+    /* width: 250px; */
+    max-width: 300px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
@@ -112,7 +114,7 @@
   .pzl-page .difficulty.hard {
     background: #f8d7da;
     color: #721c24;
-    margin-right: 50px;
+    margin-right: 55px;
 
   }
   
@@ -171,7 +173,8 @@
     padding: 10px 20px;
     font-size: 1rem;
     color: #ff6b6b !important;
-    background: #fff !important;
+    /* background: #fff !important; */
+    background-color: transparent !important;
     border: 2px solid #ff6b6b !important;
     border-radius: 8px;
     cursor: pointer;
@@ -184,4 +187,13 @@
     color: white !important;
   }
 
+
+  @media (max-width: 768px) {
+   
+.pzl-page h2 {
+        font-size: 1.6rem;
+    }
+    }
   
+
+    

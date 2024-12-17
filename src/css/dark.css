@@ -1,0 +1,181 @@
+body.dark-mode {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background: url('../../public/img/dark4.jpg') ;
+  background-size: contain; /* Ensures the entire image is visible */
+  background-attachment: scroll; /* Allows the background to scroll with the content */
+
+  width: 100%; /* Takes the full page width */
+  height: 120%; /* Takes the full page height */
+
+}
+
+
+.dark-mode .about-content h2 {
+  /* font-size: 28px; */
+  margin-bottom: 15px;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode h2:hover{
+  color: orange;
+}
+
+.dark-mode .about-content p {
+  color: white;
+}
+
+.dark-mode .about {
+
+    background-color: transparent;
+    gap: 30px;
+    color: white;
+}
+
+.dark-mode .tournaments, .puzzles {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+}
+
+.dark-mode .join-us {
+  background: transparent;
+  color: #ffe9e9;
+  padding: 30px 20px;
+}
+
+.dark-mode .join-us p {
+ 
+  color: #ffffff;
+}
+
+.dark-mode .about {
+  background-color: transparent;
+}
+.dark-mode .our-aim {
+  background-color: transparent;
+}
+
+.dark-mode .our-aim ul, .join-us ul{
+
+  color: rgb(255, 255, 255);
+}
+
+.dark-mode .our-aim li, .join-us li{
+  color: #ffffff;
+}
+
+
+.dark-mode .rules-section {
+
+  background-color: transparent;
+  background: none;
+  color: #ffffff;
+}
+
+.dark-mode .rules-section .rules-list li{
+
+  color: #ffffff;
+}
+
+.dark-mode .pzl-page {
+  background: none;
+}
+
+.dark-mode .pzl-page .puzzle-day {
+  background: url('../../public/img/dark10.jpg') ;
+  /* background-position: 10%; */
+
+
+}
+
+
+.dark-mode.pzl-page{
+
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background: url('../../public/img/dark8.jpg') ;
+  background-size: contain; /* Ensures the entire image is visible */
+  background-attachment: scroll; /* Allows the background to scroll with the content */
+
+  width: 100%; /* Takes the full page width */
+  height: 120%; /* Takes the full page height */
+
+  
+}
+
+.dark-mode.pzl-page h2 {
+
+  color: #ffffff;
+
+}
+
+.dark-mode.pzl-page .puzzle-card {
+
+  background: #03030461;
+}
+
+
+.dark-mode.pzl-page .puzzle-highlight button {
+
+  background-color: transparent;
+}
+
+.dark-mode .btn {
+
+  background-color: transparent;
+  border: 2px solid orange;
+  border-radius: 10px;
+  color: orange;
+}
+
+.dark-mode .join-us ul li {
+
+  background: transparent;
+  color: #ffffff;
+}
+
+.dark-mode .join-us a {
+
+  color: #ffffff;
+}
+
+
+
+.dark-mode.tmt-page{
+
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background: url('../../public/img/dark11.jpg') ;
+  background-size: contain; /* Ensures the entire image is visible */
+  background-attachment: scroll; /* Allows the background to scroll with the content */
+
+  width: 100%; /* Takes the full page width */
+  height: 120%; /* Takes the full page height */
+
+  
+}
+
+
+.dark-mode .about-page{
+
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background: url('../../public/img/dark12.jpg') ;
+  background-size: contain; /* Ensures the entire image is visible */
+  background-attachment: scroll; /* Allows the background to scroll with the content */
+
+  width: 100%; /* Takes the full page width */
+  height: 120%; /* Takes the full page height */
+
+  
+}
+
+.dark-mode .btn {
+
+  border: 2px solid orange;
+}
+
+

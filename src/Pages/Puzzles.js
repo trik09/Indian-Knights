@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import "../css/pzl.css";
@@ -6,54 +6,67 @@ import "../css/pzl.css";
 const Puzzles = () => {
   const [showCard, setShowCard] = useState(false); // State to control the card visibility
   const [showCard2, setShowCard2] = useState(false); // State to control the card visibility
-
   const [currentPuzzle, setCurrentPuzzle] = useState(null); // State to store the current puzzle's details
+  const [isDarkMode, setDarkMode] = useState(() => {
+    // Check local storage for dark mode preference
+    const storedMode = localStorage.getItem('darkMode');
+    return storedMode === 'true'; // Default to false if not set
+  });
+
+  // Toggle Dark Mode
+  const toggleDarkMode = () => {
+    const newMode = !isDarkMode;
+    setDarkMode(newMode);
+    localStorage.setItem('darkMode', newMode); // Save preference to local storage
+    document.body.classList.toggle("dark-mode", newMode); // Apply global class
+  };
+
+  useEffect(() => {
+    // Apply the dark mode class on initial render if stored mode is true
+    if (isDarkMode) {
+      document.body.classList.add("dark-mode");
+    }
+  }, [isDarkMode]);
 
   // Puzzle data with custom lengths
   const puzzles = [
-    // Puzzle of the Day
     { id: 'puzzle-day', difficulty: 'easy', image: '/img/puzzle/p1.jpg', length: 10 },
-
-    // Easy Puzzles
     { id: 'puzzle-1', difficulty: 'easy', image: '/img/puzzle/pe1.jpg', length: 5 },
     { id: 'puzzle-2', difficulty: 'easy', image: '/img/puzzle/pe2.jpg', length: 5 },
     { id: 'puzzle-3', difficulty: 'easy', image: '/img/puzzle/pe3.jpg', length: 5 },
-
-    // Medium Puzzles
     { id: 'puzzle-4', difficulty: 'medium', image: '/img/puzzle/pm1.jpg', length: 10 },
     { id: 'puzzle-5', difficulty: 'medium', image: '/img/puzzle/pm2.jpg', length: 10 },
     { id: 'puzzle-6', difficulty: 'medium', image: '/img/puzzle/pm3.jpg', length: 10 },
-
-    // Hard Puzzles
     { id: 'puzzle-7', difficulty: 'hard', image: '/img/puzzle/ph1.jpg', length: 15 },
     { id: 'puzzle-8', difficulty: 'hard', image: '/img/puzzle/ph2.jpg', length: 15 },
   ];
 
-  // Handler to show the card and pass the puzzle's length
   const handleButtonClick = (id) => {
     const selectedPuzzle = puzzles.find(puzzle => puzzle.id === id);
-    setCurrentPuzzle(selectedPuzzle); // Set the puzzle details dynamically
-    setShowCard(true); // Show the card
+    setCurrentPuzzle(selectedPuzzle);
+    setShowCard(true);
   };
 
-    // Handler to show the card and pass the puzzle's length
-    const handleAnalysisClick = (id) => {
-        const selectedPuzzle = puzzles.find(puzzle => puzzle.id === id);
-        setCurrentPuzzle(selectedPuzzle); // Set the puzzle details dynamically
-        setShowCard2(true); // Show the card
-      };
-    
+  const handleAnalysisClick = (id) => {
+    const selectedPuzzle = puzzles.find(puzzle => puzzle.id === id);
+    setCurrentPuzzle(selectedPuzzle);
+    setShowCard2(true);
+  };
 
-  // Handler to close the card
   const handleCloseCard = () => {
     setShowCard(false);
-    setCurrentPuzzle(null); // Clear the puzzle details
+    setShowCard2(false);
+    setCurrentPuzzle(null);
   };
 
+  
   return (
-    <div className="pzl-page">
-      <Header />
-
+    <div className={`pzl-page ${isDarkMode ? "dark-mode" : ""}`}>
+      {/* Header Component */}
+      <div className="app">
+        <Header onToggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode}/>
+        {/* Add the rest of your content here */}
+      </div>
       {/* Puzzle of the Day */}
       <section className="puzzle-day">
         <h2>🔑 Puzzle of the Day</h2>

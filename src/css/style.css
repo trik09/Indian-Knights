@@ -10,11 +10,12 @@ body {
     /* margin: 0; */
     font-family: 'Poppins', sans-serif;
     color: white;
-    background: url('../../public/img/image.png') no-repeat center center fixed;
+    background: url('../../public/img/bg3.jpg') no-repeat center center fixed;
     background-size: cover;
     /* position: relative; */
     scroll-behavior: smooth;
     width: 100%;
+    margin-top: 70px;
 }
 
 section{
@@ -24,6 +25,16 @@ section{
 }
 
 /* Overlay for reduced opacity */
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    background-image: linear-gradient(to right, #ff5722, #ffffff, #4caf50); /* Gradient of Indian flag colors */
+    -webkit-background-clip: text;
+    color: transparent; /* Ensures the gradient applies to the text */
+
+    padding: 10px;
+  }
+  
 
 
 /* Header */
@@ -93,7 +104,7 @@ section{
     font-size: 4rem;
     font-weight: bold;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px black;
+    /* text-shadow: 2px 2px 4px black; */
 }
 
 .banner-content .tagline {
@@ -106,7 +117,7 @@ section{
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px black;
+    /* text-shadow: 2px 2px 4px black; */
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -132,6 +143,10 @@ section{
     border-radius: 5px;
     transition: background 0.3s ease, transform 0.3s ease;
     margin-top: 20px;
+}
+
+.home .btn {
+    margin-top: 30px;
 }
 
 .btn:hover {

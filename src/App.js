@@ -5,6 +5,7 @@ import About from "./Pages/About";
 import Tournaments from "./Pages/Tournaments";
 import Puzzles from "./Pages/Puzzles";
 
+
 const App = () => {
   const [isLoading, setIsLoading] = useState(true); // Loading state
 
